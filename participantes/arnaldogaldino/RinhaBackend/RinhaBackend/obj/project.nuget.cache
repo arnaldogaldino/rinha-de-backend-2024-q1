@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "3IqEzTaNP9gVt5cOYxeEMFZeMPyBxbRtRpt/gNSOa+dLLQZONhjWTTPq2H296QBcoQj7HQeD0LzmzJP6giwB/g==",
+  "success": true,
+  "projectFilePath": "\\\\wsl.localhost\\Ubuntu-20.04\\home\\arnaldo\\rinha-de-backend-2024-q1\\participantes\\arnaldogaldino\\RinhaBackend\\RinhaBackend\\RinhaBackend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\arnal\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.5\\microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512"
+  ],
+  "logs": []
+}
