@@ -1,0 +1,10 @@
+@RinhaBackend_HostAddress = http://localhost:3000
+
+POST {{RinhaBackend_HostAddress}}/clientes/{id}/transacoes
+Accept: application/json
+
+
+GET {{RinhaBackend_HostAddress}}/clientes/{id}/extrato
+Accept: application/json
+
+###
