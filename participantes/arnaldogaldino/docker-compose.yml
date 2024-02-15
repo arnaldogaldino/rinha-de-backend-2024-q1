@@ -1,7 +1,6 @@
 version: "3.5"
 
 services:
-
   db:
     image: postgres:alpine3.19
     hostname: db
@@ -38,36 +37,38 @@ services:
           memory: "10MB"
     networks:
       - default
-      
+
   api01: &api
     image: arnaldogaldino/rinha-2024q1-crebito:latest
     hostname: api01
     environment:
       - DB_HOSTNAME=db
-      - PORT=3000
+      - PORT=3001
+      - ASPNETCORE_URLS=http://*:8081
     ports:
-      - "3001:8080"
+      - "3001:8081"
     depends_on:
       - db
-    networks:
-      - default
     deploy:
       resources:
         limits:
           cpus: "0.45"
           memory: "200MB"
+    networks:
+      - default
 
   api02:
     <<: *api
     hostname: api02
     environment:
       - DB_HOSTNAME=db
-      - PORT=3000
+      - PORT=3002
+      - ASPNETCORE_URLS=http://*:8082
     ports:
-      - "3002:8080"
+      - "3002:8082"
     networks:
       - default
-
+      
 networks:
   default:
     driver: bridge
