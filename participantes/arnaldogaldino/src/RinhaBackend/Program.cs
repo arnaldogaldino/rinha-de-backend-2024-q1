@@ -9,7 +9,7 @@ var app = builder.Build();
 var connString = app.Configuration.GetConnectionString("DefaultConnection");
 var dataSourceBuilder = new NpgsqlDataSourceBuilder(connString);
 var dataSource = dataSourceBuilder.Build();
-var sinaleiro = new SemaphoreSlim(100);
+var sinaleiro = new SemaphoreSlim(10);
 
 app.MapPost("/clientes/{id}/transacoes", async (IValidator<Transacao> validator, int id, Transacao transacao) =>
 {

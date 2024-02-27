@@ -18,6 +18,8 @@
 # docker tag local-image:tagname new-repo:tagname
 # docker push new-repo:tagname
 
+docker exec -it 29fa bash
+
 sudo docker system prune -af
 
 docker buildx build --platform linux/amd64 -t arnaldogaldino/rinha-2024q1-crebito:latest -f src/RinhaBackend/Dockerfile .
@@ -27,6 +29,9 @@ docker push arnaldogaldino/rinha-2024q1-crebito:latest
 docker compose up -d
 
 $env:GATLING_HOME=$env:USERPROFILE\gatling\3.10.3\
+
+cd /mnt/c/_projects/rinha-de-backend-2024-q1/
+sh executar-teste-local.sh
 
 	CREATE OR REPLACE FUNCTION gravar_transacao (p_cliente_id INTEGER, p_valor INTEGER, p_tipo CHAR(1), p_descricao VARCHAR(10))
 	RETURNS table(limite INTEGER, saldo INTEGER, limite_insuficiente BOOLEAN)
